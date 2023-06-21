@@ -1,0 +1,51 @@
+alias dk='docker'
+alias lab='jupyter lab'
+
+alias dev='cd ~/Development/'
+alias doc='cd ~/Documents'
+alias dl='cd ~/Downloads'
+alias desk='cd ~/Desktop'
+
+alias untar='tar xzvf'
+
+alias vm='ssh vm'
+alias vm1='ssh vm1'
+
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../../..'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../..'
+
+alias rm='rm -rf'
+alias c='clear'
+alias apt-get='sudo apt-get'
+
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date + "%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+
+#alias diff='colordiff'
+alias mkdir='mkdir -pv'
+
+alias ls='ls -GFh'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -cF'
+alias less='less -N'
+
+
+alias gs='git status'
+alias gpush='git push'
+alias gpull='git pull --rebase'
+alias gti='git'
+alias gt='git'
+alias gi='git'
+alias gm='git commit -am'
+alias ga='git add .'
+
+alias numfmt='gnumfmt'

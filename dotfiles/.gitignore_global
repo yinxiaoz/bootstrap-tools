@@ -1,0 +1,11 @@
+*~
+.DS_Store
+*.swp
+.classpath
+.gitignore
+.project
+.settings/
+build
+.idea
+*.iml
+.pyc
