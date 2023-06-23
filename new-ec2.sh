@@ -1,6 +1,7 @@
 sudo yum update
 
 mkdir .vim/backup
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # docker
 sudo yum install docker
@@ -74,11 +75,10 @@ LDFLAGS="-L/usr/local/lib -Wl,-rpath=/usr/local/lib" ./configure --prefix=/usr/l
 make
 sudo make install
 
-# pkill tmux
-# close your terminal window (flushes cached tmux executable)
-# open new shell and check tmux version
 tmux -V
 
 git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
+
+
