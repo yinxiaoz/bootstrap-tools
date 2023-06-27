@@ -1,13 +1,4 @@
 # If you come from bash you might have to change your $PATH.
-#
-
-export OPENAI_API_KEY="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"
-
-export PATH=$HOME/.toolbox/bin:$PATH
-
-export REQUESTS_CA_BUNDLE="$HOME/.mac-ca-roots"
-
-
 
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
