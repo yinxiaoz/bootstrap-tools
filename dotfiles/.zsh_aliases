@@ -49,3 +49,6 @@ alias gm='git commit -am'
 alias ga='git add .'
 
 alias numfmt='gnumfmt'
+
+alias tx-new='tmux -CC'
+alias tx='tmux -CC attach'
