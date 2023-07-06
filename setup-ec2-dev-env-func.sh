@@ -15,8 +15,7 @@ setup_docker() {
     newgrp docker
 
     # docker-compose
-    wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)
-    sudo mv docker-compose-$(uname -s)-$(uname -m) /usr/local/bin/docker-compose
+    sudo curl -L https://github.com/docker/compose/releases/download/v2.19.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
     sudo chmod -v +x /usr/local/bin/docker-compose
 
     # Enable docker service at AMI boot time
