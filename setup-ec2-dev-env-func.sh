@@ -18,18 +18,25 @@ setup_nvm() {
 }
 
 setup_kube() {
+    # https://minikube.sigs.k8s.io/docs/start/
     curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
     sudo install minikube-linux-amd64 /usr/local/bin/minikube
-
+    
+    # https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
     sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
+    # https://eksctl.io/introduction/#installation
     ARCH=amd64
     PLATFORM=$(uname -s)_$ARCH
     curl -sLO "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$PLATFORM.tar.gz"
     curl -sL "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_checksums.txt" | grep $PLATFORM | sha256sum --check
     tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz
     sudo mv /tmp/eksctl /usr/local/bin
+
+    # https://kompose.io/installation/
+    curl -L https://github.com/kubernetes/kompose/releases/download/v1.28.0/kompose-linux-amd64 -o kompose
+    sudo mv ./kompose /usr/local/bin/kompose
 }
 
 setup_docker() {
