@@ -86,8 +86,6 @@ setup_zsh_plugin() {
 }
 
 setup_pyenv() {
-    # necessary dependencies
-    sudo yum install gcc zlib-devel bzip2 bzip2-devel readline readline-devel sqlite sqlite-devel openssl openssl-devel libffi-devel -y
     
     # resolve pyenv on amazon linux 2 issue - https://stackoverflow.com/questions/71954694/pyenv-on-amazon-linux-fails-to-build-due-to-openssl
     sudo yum remove openssl-devel.x86_64
@@ -98,15 +96,18 @@ setup_pyenv() {
     curl https://pyenv.run | bash
 
     # The following is already included in dotfiles/.zshrc. we can skip
-    # echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-    # echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-    # echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+    echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+    echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 
     # pyenv virtualenv plugin
     git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
     # The following is already included in dotfiles/.zshrc. we can skip
-    # echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+    echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+
+    # necessary dependencies
+    sudo yum install gcc zlib-devel bzip2 bzip2-devel readline readline-devel sqlite sqlite-devel openssl openssl-devel libffi-devel -y
 }
 
 setup_tmux() {

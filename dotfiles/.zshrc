@@ -111,13 +111,6 @@ source $ZSH/oh-my-zsh.sh
 #
 export PATH="$HOME/.poetry/bin:$PATH"
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
-
 PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
