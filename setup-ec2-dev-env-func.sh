@@ -110,6 +110,10 @@ setup_pyenv() {
     sudo yum install gcc zlib-devel bzip2 bzip2-devel readline readline-devel sqlite sqlite-devel openssl openssl-devel libffi-devel -y
 }
 
+setup_poetry() {
+    curl -sSL https://install.python-poetry.org | python3 -
+}
+
 setup_tmux() {
     # tmux
     # install deps
