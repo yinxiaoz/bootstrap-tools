@@ -50,6 +50,9 @@ setup_docker() {
     sudo curl -L https://github.com/docker/compose/releases/download/v2.19.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
     sudo chmod -v +x /usr/local/bin/docker-compose
 
+    sudo chgrp docker /usr/local/bin/docker-compose
+    sudo chmod 750 /usr/local/bin/docker-compose
+
     # Enable docker service at AMI boot time
     sudo systemctl enable docker.service
     # Start the Docker service
