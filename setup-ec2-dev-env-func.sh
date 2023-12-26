@@ -145,3 +145,15 @@ setup_tmux() {
     cp .tmux/.tmux.conf.local .
 }
 
+mkdir ~/.vim
+mkdir ~/.vim/backup
+
+update_yum
+setup_vim
+setup_zsh
+setup_zsh_plugin
+setup_tmux
+setup_docker
+setup_kube
+setup_pyenv
+setup_poetry
